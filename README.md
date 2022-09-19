@@ -21,6 +21,8 @@
 
 ![mcu](./images/e62e77d262f042fe99832791bdb53da5.jpg)
 
+STM32F401CCU6 chip
+
 ### Investigation
 
 ![windows devices](./images/2f7252b5fba71b376ad1f09383b60120.png)
@@ -34,7 +36,7 @@ USB device connected (usbccgp): (Standard USB Host Controller) USB Composite Dev
 USB device connected (HidUsb): (Standard system devices) USB Input Device (AA96:AAAC:0001)
 ```
 
-dmesg on Ubuntu
+dmesg on Ubuntu identifies it as "WJC rs40rgb"
 
 ```text
 [ 1875.040201] usb 1-1: new full-speed USB device number 5 using xhci_hcd
@@ -54,9 +56,7 @@ dmesg on Ubuntu
 [ 1881.167061] hid-generic 0003:AA96:AAAC.0003: input,hidraw2: USB HID v1.11 Mouse [WJC rs40rgb] on usb-0000:00:14.0-1/input2
 ```
 
---> keyboard USB VID AA96 PID AAAC
-
-STM32F401CCU6 chip
+--> programmed keyboard USB VID AA96 PID AAAC
 
 ### Layout
 
@@ -64,10 +64,72 @@ STM32F401CCU6 chip
 4 rows
 
 *Configuration*
-1 x 12
-1.25, 9, 1.75
-1.75, 9, 1.25
-1.25, 1, 1.25,  2.25,  2.75, 1.25, 1, 1.25
+
+<table>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</th>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1.25</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td></td>
+    <td>1.75</td>
+  </tr>
+  <tr>
+    <td>1.75</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td></td>
+    <td>1.25</td>
+  </tr>
+  <tr>
+    <td>1.25</td>
+    <td>1</td>
+    <td>1.25</td>
+    <td></td>
+    <td>2.25</td>
+    <td></td>
+    <td></td>
+    <td>2.75</td>
+    <td></td>
+    <td>1.25</td>
+    <td>1</td>
+    <td>1.25</td>
+  </tr>
+</tbody>
+</table>
+
+- 1 x 12
+- 1.25, 1 x 9, 1.75
+- 1.75, 1 x 9, 1.25
+- 1.25, 1, 1.25,  2.25,  2.75, 1.25, 1, 1.25
 
 ## Software
 
